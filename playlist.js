@@ -3,7 +3,7 @@ function Playlist() {
   this.nowPlayingIndex = 0;
 }
 
-Playlist.prototype.add = function() {
+Playlist.prototype.add = function(song) {
   this.songs.push(song);
 };
 
@@ -27,9 +27,8 @@ Playlist.prototype.next = function() {
 };
 
 Playlist.prototype.renderInElement = function(list) {
-  list.innerHtml = "";
-  for (var i = 0; i < this.songs.length; i ++) {
-  list.innerHtml += this.songs[i].toHTML();
+  list.innerHTML = "";
+  for (var i = 0; i < this.songs.length; i++) {
+    list.innerHTML += this.songs[i].toHTML();
   }
-
 };

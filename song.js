@@ -22,8 +22,7 @@ Song.prototype.toHTML = function() {
   htmlString += this.title;
   htmlString += ' _ ';
   htmlString += this.artist;
-  htmlString += '<span class="duration"';
-  htmlString += '>';
+  htmlString += '<span class="duration">';
   htmlString += this.duration;
   htmlString += '</span></li>';
   return htmlString;
