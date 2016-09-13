@@ -1,17 +1,12 @@
 function Song(title, artist, duration) {
-  this.title = title;
+  //This is what happens when you do Media.call(this)
+  // var song = this;
+  // Media.call(song, title, duration);
+  Media.call(this, title, duration);
   this.artist = artist;
-  this.duration = duration;
-  this.isPlaying = false;
 }
 
-Song.prototype.play = function() {
-  this.isPlaying = true;
-};
-
-Song.prototype.stop = function() {
-  this.isPlaying = false;
-};
+Song.prototype = Object.create(Media.prototype);
 
 Song.prototype.toHTML = function() {
   var htmlString = '<li';
